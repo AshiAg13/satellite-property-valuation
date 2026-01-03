@@ -37,8 +37,6 @@ Exploratory data analysis and geospatial analysis were performed to study featur
 
 Satellite images are programmatically fetched using a static maps API based on latitude and longitude coordinates. Image downloading is automated using a Python script to ensure reproducibility.
 
-Raw satellite images are not included in the repository and are generated as needed.
-
 ---
 
 ## Image Feature Extraction
@@ -71,12 +69,12 @@ The tabular-only model achieved stronger quantitative performance on the validat
 ## Deliverables
 
 - Code: Jupyter notebooks and Python scripts in this repository  
-- Prediction file: `outputs/enrollno_final.csv`  
-- Final report: `report/enrollno_report.pdf`
+- Prediction file: `24118012.csv`  
+- Final report: `24118012.pdf`
 
 ---
 
-## How to Run (High-Level)
+## How to Run 
 
 1. Run the preprocessing notebook to clean data and perform EDA  
 2. Use the image fetching script to download satellite images  
