@@ -12,9 +12,7 @@ import requests
 import pandas as pd
 from tqdm import tqdm
 
-# -------------------------------
 # Configuration
-# -------------------------------
 
 MAPBOX_TOKEN =" KEY here "  
 IMAGE_SIZE = "224x224"
@@ -25,15 +23,11 @@ IMAGE_DIR = "data/satellite_images"
 
 os.makedirs(IMAGE_DIR, exist_ok=True)
 
-# -------------------------------
 # Load data
-# -------------------------------
 
 df = pd.read_csv(DATA_PATH)
 
-# -------------------------------
 # Image download function
-# -------------------------------
 
 def fetch_satellite_image(lat, lon, save_path):
     # NOTE: Mapbox expects longitude FIRST, then latitude
@@ -50,14 +44,12 @@ def fetch_satellite_image(lat, lon, save_path):
     else:
         print(f"Failed for location: {lat}, {lon}")
 
-# -------------------------------
+
 # Download loop (safe + resumable)
-# -------------------------------
 
 for idx, row in tqdm(df.iterrows(), total=len(df)):
     img_path = os.path.join(IMAGE_DIR, f"{idx}.png")
 
-    # Skip if already downloaded
     if os.path.exists(img_path):
         continue
 
